@@ -3,11 +3,25 @@
 Выполните все этапы работы с проектом по примеру с [Nginx](/content/Docker/ImageLibrary/Nginx.md)
 
 > Никогда в разработке не используйте русские имена файлов и каталогов!
+
 > Никогда в разработке не используйте пробелы и спец.символы в именах файлов и каталогов!
 
 > Перед созданием проекта убедитесь, что порт 8084 не занят другим приложением!
 
 1. Запустить **simple-http-server** для раздачи файлов
+
+в **Windows Powershell**
+```shell
+docker run -d `
+  --name file-server `
+  -p 8084:80 `
+  -v "${PWD}:/srv" `
+  halverneus/static-file-server:latest
+```
+
+> Если эта команда в Powershell не работает, то удалите из кода апострофы `
+
+в **Git-Bash/Linux/WSL 2.0/Mac**
 ```shell
 docker run -d \
   --name file-server \
@@ -16,3 +30,5 @@ docker run -d \
   halverneus/static-file-server:latest
 ```
 2. [Откройте: http://localhost:8084](http://localhost:8084)
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
