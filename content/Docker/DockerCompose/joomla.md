@@ -18,7 +18,7 @@ joomla-docker/
 └── compose.yml
 ```
 
-Создаём каталог проекта
+Создаём каталог проекта одной командой в Git-Bash
 ```shell
 mkdir -p joomla-docker && touch joomla-docker/compose.yaml && cd joomla-docker
 ```
@@ -79,28 +79,6 @@ volumes:
   db_data:
   joomla_data:
 ```
-Версия 2
-```yml
-services:
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: joomla
-    ports:
-      - "3308:3306"
-  joomla:
-    image: joomla:4-apache
-    depends_on:
-      - db
-    environment:
-      JOOMLA_DB_HOST: db
-      JOOMLA_DB_USER: root
-      JOOMLA_DB_PASSWORD: root
-      JOOMLA_DB_NAME: joomla
-    ports:
-      - "8082:80"
-```
 
 ### 3. Установка и запуск проекта
 
@@ -110,7 +88,12 @@ services:
 ```shell
 docker compose up -d
 ```
+- `-d` - существует директория
+
 Проверка статуса
+```shell
+docker compose ls
+```
 ```shell
 docker compose ps -a
 ```
@@ -131,7 +114,7 @@ docker network inspect joomla-docker_joomla-network
 
 Выполнить установку **Joomla** через веб-установщик
 
-[Запустите веб-установщик Joomla, открыв в браузере адрес: http://localhost:80802](http://localhost:8082)
+[Запустите веб-установщик Joomla, открыв в браузере адрес: http://localhost:8082](http://localhost:8082)
 
 Вы перейдёте на стандартную страницу мастера установки **Joomla**. Вас попросят выполнить несколько шагов:
 - Выбор языка установщика (например, `Русский` или `English`) - у меня русский не установился!
@@ -140,7 +123,7 @@ docker network inspect joomla-docker_joomla-network
   - Тип базы данных: `MySQLi` или `PDO MySQL` (подойдёт любой).
   - Имя сервера баз данных: `db` (это имя сервиса из нашего `compose.yml` файла).
   - Имя пользователя: `joomla_user`
-  - Пароль: `joomla_password`
+  - Пароль к БД: `joomla_password`
   - Имя базы данных: `joomla_db`
 
 Префикс таблиц: можно оставить по умолчанию или изменить для безопасности.

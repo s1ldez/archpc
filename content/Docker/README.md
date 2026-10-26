@@ -4,7 +4,7 @@
 
 - [Быстрый старт](/content/Docker/getDocker.md)
 - [Codespace (в разработке)](/content/Docker/Docs/Codespace.md)
-- [Готовые образы](/content/Docker/ImageLibrary/README.md)
+- [Готовые образы (Docker CLI)](/content/Docker/ImageLibrary/README.md)
 - [Dockerfile](/content/Docker/Dockerfile/README.md)
 - [Docker Compose](/content/Docker/DockerCompose/README.md)
 - []()
@@ -15,7 +15,7 @@
 - [Docker Для Начинающих за 1 Час / Docker с Нуля](https://rutube.ru/video/b60fe155ceb1fbe0edc837681fd51ef3/)
 - [Docker - Полный курс Docker Для Начинающих [3 ЧАСА]](https://rutube.ru/video/e2ee9fbaa95ba1fc563e548529bb83e1/)
 - [Docker. Что это такое? | Docker для начинающих](https://rutube.ru/video/c405ceaf110c3d144a90a46f2694fc9d/)
-- []()
+- [Лучший Гайд по Docker Для Начинающих за 1 Час | Docker с Нуля](https://vkvideo.ru/video-221993084_456239168)
 - []()
 
 ### Документация
@@ -32,6 +32,7 @@
 - [CLI Cheat Sheet](https://www.docker.com/resources/cli-cheat-sheet/)
 - [Шпаргалка по Docker(моя)]()
 - [Шпаргалка по Docker на Alt Wiki](https://www.altlinux.org/Docker_Reminder)
+- [Лучшие практики по Docker](https://www.youtube.com/watch?v=vBD4jzv0oJ0)
 
 ### Полезные ссылки
 
